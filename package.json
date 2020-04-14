@@ -1,0 +1,40 @@
+{
+  "name": "membersOnly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^3.2.0",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.9",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon app.js",
+    "sass": "node-sass --include-path scss ./sass/index.scss ./public/css/index.css --output-style compressed",
+    "watch-sass": "nodemon -e scss -x \"npm run sass\"",
+    "start": "concurrently --kill-others \"npm run devstart\" \"npm run watch-sass\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrytran721/membersOnly.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrytran721/membersOnly/issues"
+  },
+  "homepage": "https://github.com/henrytran721/membersOnly#readme"
+}

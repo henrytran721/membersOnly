@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Members Only</title>
+        <link rel='stylesheet' href='/css/index.css' type='text/css' />
+    </head>
+    <%if(user) {%>
+    <a class='logout' href='/logout'>Log Out</a>
+    <div class='heading'>
+        <h1>Welcome <%= user.first_name %>!</h1>
+        <a href='/create-message'><button>Create a new message</button></a>
+    </div>
+    <div class='postCardContainer'>
+        <%for(let i = 0; i < post.length; i++) {%>
+            <div class='postcard'>
+                <h2><%= post[i].author.first_name + ' ' + post[i].author.last_name %></h2>
+                <div class='titleDate'>
+                    <h4><%= post[i].title %></h4>
+                    <p><%= post[i].date.toDateString() %></p>
+                </div>
+                <p><%= post[i].description %></p>
+            </div>
+        <% } %>
+    </div>
+    <% } else { %>
+    <div class='heading'>
+        <h1>Welcome to Members Only</h1>
+        <p>Where you can post about anything you want and stay anonymous to the public!</p>
+    </div>
+    <div class='buttons'>
+        <a href='/sign-up'><button>Sign Up</button></a>
+        <a href='/login'><button>Log In</button></a>
+    </div>
+    <div class='postCardContainer'>
+        <%for(let i = 0; i < post.length; i++) {%>
+            <div class='postcard'>
+                <div class='titleDate'>
+                    <h4><%= post[i].title[0].toUpperCase() + post[i].title.slice(1);%></h4>
+                    <p><%= post[i].date.toDateString() %></p>
+                </div>
+                <p><%= post[i].description %></p>
+            </div>
+        <% } %>
+    </div>
+    <% } %>
+</html>

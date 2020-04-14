@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Members Only</title>
+        <link rel='stylesheet' href='/css/index.css' type='text/css' />
+    </head>
+    <%if(user) {%>
+    <div class='createMessageContainer'>
+        <h1>Create New Message</h1>
+        <form method='POST' action='/create-message'>
+            <label>Title: </label>
+            <input type='text' name='title' placeholder='Please enter title' required />
+            <label>Description: </label>
+            <textarea type='textarea' name='description' placeholder='Please enter a description' rows='6' required></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+    <%} else { %>
+    <div>
+        <h1>Please log in to create a post!</h1>
+        <a href='/login'><button>Log in</button></a>
+        <a href='/sign-up'><button>Sign Up</button></a>
+    </div>
+    <% } %>
+</html>
