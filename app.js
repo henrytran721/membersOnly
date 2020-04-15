@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 const async = require('async');
 const moment = require('moment');
 
-const dev_db_url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-gevd4.azure.mongodb.net/members_only?retryWrites=true&w=majority`
+const dev_db_url = `mongodb+srv://henrytran721:d@rkb1ad33r@cluster0-gevd4.azure.mongodb.net/members_only?retryWrites=true&w=majority`
 const mongoDb = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDb, {useUnifiedTopology: true, useNewUrlParser: true});
 const db = mongoose.connection;
