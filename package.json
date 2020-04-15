@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/henrytran721/membersOnly/issues"
   },
-  "homepage": "https://github.com/henrytran721/membersOnly#readme"
+  "homepage": "https://github.com/henrytran721/membersOnly#readme",
+  "engines": {
+    "node": "12.13.0"
+  }
 }
